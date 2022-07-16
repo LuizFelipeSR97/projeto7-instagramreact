@@ -1,16 +1,13 @@
 import Sugestao from "./sugestao"
+import User from "./user"
+import user from "./server/serverUser"
+import sugestoes from "./server/serverSuggestions"
 
 function Sidebar(){
     return (
         <div class="sidebar">
-
-            <div class="usuario">
-                <img src="assets/img/catanacomics.svg" alt=""/>
-                <div class="texto">
-                <strong>catanacomics</strong>
-                Catana
-                </div>
-            </div>
+            
+            <User imgUrl={user.imgUrl} username={user.username} realName={user.realName} />
 
             <div class="sugestoes">
 
@@ -19,11 +16,7 @@ function Sidebar(){
                     <div>Ver tudo</div>
                 </div>
 
-                <Sugestao imgUrlUser="assets/img/bad.vibes.memes.svg" nameUser="bad.vibes.memes" />
-                <Sugestao imgUrlUser="assets/img/chibirdart.svg" nameUser="chibirdart" />
-                <Sugestao imgUrlUser="assets/img/razoesparaacreditar.svg" nameUser="razoesparaacreditar" />
-                <Sugestao imgUrlUser="assets/img/adorable_animals.svg" nameUser="adorable_animals" />
-                <Sugestao imgUrlUser="assets/img/smallcutecats.svg" nameUser="smallcutecats" />
+                {sugestoes.map(sugest => <Sugestao imgUrlUser={sugest.imgUrlUser} nameUser={sugest.nameUser} />)}
 
             </div>
 

@@ -1,10 +1,12 @@
 import Post from "./post"
+import postsInfos from "./server/serverPosts"
 
 function Posts(){
     return (
         <div class="posts">
-            <Post imgUrlUser="assets/img/meowed.svg" nameUser="meowed" imgUrlContent="assets/img/gato-telefone.svg" imgUrlLike="assets/img/respondeai.svg" nameLike="respondeai"/>
-            <Post imgUrlUser="assets/img/barked.svg" nameUser="barked" imgUrlContent="assets/img/dog.svg" imgUrlLike="assets/img/adorable_animals.svg" nameLike="adorable_animals"/>
+
+            {postsInfos.map(postagem => <Post imgUrlUser={postagem.imgUrlUser} nameUser={postagem.nameUser} imgUrlContent={postagem.imgUrlContent} imgUrlLike={postagem.imgUrlLike} nameLike={postagem.nameLike}/>)}
+
         </div>
     )
 }
