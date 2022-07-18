@@ -212,6 +212,14 @@ body {
   margin-bottom: 18px;
 }
 
+.off{
+  color: black;
+}
+
+.liked {
+  color: red;
+}
+
 .sidebar {
   padding-top: 24px;
   position: sticky;

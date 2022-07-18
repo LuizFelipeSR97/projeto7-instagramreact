@@ -1,4 +1,10 @@
+import Curtida from "./curtida"
+
+let classname = "md hydrated"
+let ionName="heart-outline"
+
 function Post(props){
+
     return (
         <div class="post">
             <div class="topo">
@@ -11,12 +17,12 @@ function Post(props){
                 </div>
             </div>
             <div class="conteudo">
-                <img src={props.imgUrlContent} alt=""/>
+                <img src={props.imgUrlContent} onDoubleClick={() => alert("Não consegui fazer curtir")} alt=""/>
             </div>
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <Curtida />
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
